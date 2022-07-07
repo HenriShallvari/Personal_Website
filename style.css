@@ -1,0 +1,66 @@
+:root{
+    --clr-bg-light: #e3e3e3;
+    --clr-bg-dark: #020100;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--clr-bg-light);
+  font-family: 'Varela Round', sans-serif;
+}
+
+.shape-1 {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 20vw;
+}
+
+.shape-2 {
+  position: absolute;
+  left: 39%;
+  bottom: 30%;
+  width: 10vw;
+}
+
+.shape-3 {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  width: 15vw;
+}
+
+.landing-text{
+    padding-left: 12rem;
+    padding-top: 15rem;
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.description{
+    font-size: 1.5rem;
+}
+
+.button{
+    margin-left: 12rem;
+    margin-top: 5rem;
+
+}
+
+.button-text{
+    text-decoration: none;
+    color: #fff;
+    padding: .9em 2em;
+    background-color: var(--clr-bg-dark);
+    border: 2px solid var(--clr-bg-dark);
+}
+
+.button-text:hover{
+    color: var(--clr-bg-dark);
+    background-color: var(--clr-bg-light);
+    border: 2px solid var(--clr-bg-dark)
+}
