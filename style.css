@@ -1,6 +1,6 @@
-:root{
-    --clr-bg-light: #e3e3e3;
-    --clr-bg-dark: #020100;
+:root {
+  --clr-bg-light: #e3e3e3;
+  --clr-bg-dark: #020100;
 }
 
 body,
@@ -8,7 +8,7 @@ html {
   margin: 0;
   padding: 0;
   background-color: var(--clr-bg-light);
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
 }
 
 .shape-1 {
@@ -32,35 +32,79 @@ html {
   width: 15vw;
 }
 
-.landing-text{
-    padding-left: 12rem;
-    padding-top: 15rem;
+.landing-text {
+  padding-left: 12vw;
+  padding-top: 18vh;
 }
 
-.title{
-    font-size: 2rem;
+.title {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.description{
-    font-size: 1.5rem;
+.description {
+  font-size: 1.5rem;
 }
 
-.button{
-    margin-left: 12rem;
-    margin-top: 5rem;
-
+.button {
+  margin-left: 12vw;
+  margin-top: 5rem;
+  position: relative;
 }
 
-.button-text{
-    text-decoration: none;
-    color: #fff;
-    padding: .9em 2em;
-    background-color: var(--clr-bg-dark);
-    border: 2px solid var(--clr-bg-dark);
+.button-text {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.9em 2em;
+  background-color: var(--clr-bg-dark);
+  border: 2px solid var(--clr-bg-dark);
 }
 
-.button-text:hover{
-    color: var(--clr-bg-dark);
-    background-color: var(--clr-bg-light);
-    border: 2px solid var(--clr-bg-dark)
+.button-text:hover {
+  color: var(--clr-bg-dark);
+  background-color: var(--clr-bg-light);
+  border: 2px solid var(--clr-bg-dark);
+}
+
+.navbar {
+  position: absolute;
+  right: 12vw;
+  top: 6vh;
+  z-index: 15;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--clr-bg-dark);
+  position: relative;
+}
+
+.navbar a:nth-child(2) {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.nav {
+  overflow: hidden;
+}
+
+.nav::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--clr-bg-dark);
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+  transition: opacity .25s, transform .25s ease-in-out;
+}
+
+.nav:hover::after,
+.nav:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
