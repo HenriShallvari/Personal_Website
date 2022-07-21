@@ -1,6 +1,8 @@
 :root {
   --clr-bg-light: #e3e3e3;
   --clr-bg-dark: #020100;
+  --clr-bg-grey: #333333;
+  --clr-bg-light-grey: #444;
 }
 
 body,
@@ -54,20 +56,20 @@ html {
   }
 
   .navbar{
-    display: block;
-    padding-top: 1rem;
+    background-color: var(--clr-bg-dark);
+    height: 0;
   }
 
   .nav{
+    padding: .8rem 0;
     display: block;
     text-transform: uppercase;
     text-decoration: none;
+    color: var(--clr-bg-light);
+    background-color: var(--clr-bg-grey);
     padding-left: 1rem;
   }
-
-  .nav:nth-child(2){
-    margin: .5em 0;
-  }
+  
 }
 
 @media screen and (min-width: 768px) and (mix-width: 1199px){
