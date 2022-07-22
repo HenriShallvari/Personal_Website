@@ -2,36 +2,37 @@
   --clr-bg-light: #e3e3e3;
   --clr-bg-dark: #020100;
   --clr-bg-grey: #333333;
-  --clr-bg-light-grey: #444;
+  --clr-bg-light-grey: #464545;
 }
 
 body,
 html {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-color: var(--clr-bg-light);
   font-family: "Varela Round", sans-serif;
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px){
-  .shape-1{
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .shape-1 {
     display: none;
   }
 
-  .shape-2{
+  .shape-2 {
     display: none;
   }
 
-  .shape-3{
+  .shape-3 {
     display: none;
   }
 
-  .landing-text{
+  .landing-text {
     text-align: center;
     margin-top: 12rem;
   }
 
-  .title{
+  .title {
     font-size: 2rem;
   }
 
@@ -40,7 +41,7 @@ html {
     margin-top: 5rem;
     position: relative;
   }
-  
+
   .button-text {
     text-decoration: none;
     color: #fff;
@@ -48,20 +49,67 @@ html {
     background-color: var(--clr-bg-dark);
     border: 2px solid var(--clr-bg-dark);
   }
-  
+
   .button-text:hover {
     color: var(--clr-bg-dark);
     background-color: var(--clr-bg-light);
     border: 2px solid var(--clr-bg-dark);
   }
 
-  .navbar{
-    background-color: var(--clr-bg-dark);
-    height: 0;
+  .desktop-logo {
+    display: none;
   }
 
-  .nav{
-    padding: .8rem 0;
+  .mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    padding: 1.5rem 1rem;
+    color: var(--clr-bg-light);
+    background-color: var(--clr-bg-dark);
+  }
+
+  .hamburger-menu {
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    margin: 0.3rem 0.3rem;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--clr-bg-light);
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  .navbar {
+    position: absolute;
+    width: 100%;
+    background-color: var(--clr-bg-dark);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar.active {
+    opacity: 1;
+  }
+
+  .nav {
+    padding: 0.8rem 0;
     display: block;
     text-transform: uppercase;
     text-decoration: none;
@@ -69,51 +117,46 @@ html {
     background-color: var(--clr-bg-grey);
     padding-left: 1rem;
   }
-  
+
+  .nav:hover {
+    background-color: var(--clr-bg-light-grey);
+  }
 }
 
-@media screen and (min-width: 768px) and (mix-width: 1199px){
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .shape-1 {
     position: absolute;
     left: 0%;
     bottom: 0%;
     width: 20vw;
   }
-  
+
   .shape-2 {
     position: absolute;
     left: 39%;
     bottom: 30%;
     width: 10vw;
   }
-  
+
   .shape-3 {
-    position: absolute;
-    right: 0%;
-    top: 0%;
-    width: 15vw;
+    display: none;
   }
-  
+
   .landing-text {
-    padding-left: 12vw;
-    padding-top: 18vh;
+    text-align: center;
+    margin-top: 12rem;
   }
-  
+
   .title {
     font-size: 2rem;
-    font-weight: bold;
   }
-  
-  .description {
-    font-size: 1.5rem;
-  }
-  
+
   .button {
-    margin-left: 12vw;
+    text-align: center;
     margin-top: 5rem;
     position: relative;
   }
-  
+
   .button-text {
     text-decoration: none;
     color: #fff;
@@ -121,13 +164,148 @@ html {
     background-color: var(--clr-bg-dark);
     border: 2px solid var(--clr-bg-dark);
   }
-  
+
   .button-text:hover {
     color: var(--clr-bg-dark);
     background-color: var(--clr-bg-light);
     border: 2px solid var(--clr-bg-dark);
   }
-  
+
+  .desktop-logo {
+    display: none;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    padding: 1.5rem 1rem;
+    color: var(--clr-bg-light);
+    background-color: var(--clr-bg-dark);
+    z-index: 15;
+  }
+
+  .hamburger-menu {
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    margin: 0.3rem 2rem;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--clr-bg-light);
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  .navbar {
+    position: absolute;
+    width: 100%;
+    background-color: var(--clr-bg-dark);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar.active {
+    opacity: 1;
+  }
+
+  .nav {
+    padding: 0.8rem 0;
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--clr-bg-light);
+    background-color: var(--clr-bg-grey);
+    padding-left: 1rem;
+  }
+
+  .nav:hover {
+    background-color: var(--clr-bg-light-grey);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: none;
+  }
+
+  .shape-1 {
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    width: 20vw;
+  }
+
+  .shape-2 {
+    position: absolute;
+    left: 39%;
+    bottom: 30%;
+    width: 10vw;
+  }
+
+  .shape-3 {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    width: 15vw;
+  }
+
+  .landing-text {
+    padding-left: 12vw;
+    padding-top: 18vh;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    margin-left: 12vw;
+    margin-top: 5rem;
+    position: relative;
+  }
+
+  .button-text {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.9em 2em;
+    background-color: var(--clr-bg-dark);
+    border: 2px solid var(--clr-bg-dark);
+  }
+
+  .button-text:hover {
+    color: var(--clr-bg-dark);
+    background-color: var(--clr-bg-light);
+    border: 2px solid var(--clr-bg-dark);
+  }
+
   .navbar {
     position: absolute;
     right: 12vw;
@@ -136,22 +314,22 @@ html {
     text-transform: uppercase;
     font-size: 1.125rem;
   }
-  
+
   .navbar a {
     text-decoration: none;
     color: var(--clr-bg-dark);
     position: relative;
   }
-  
+
   .navbar a:nth-child(2) {
     margin-left: 1rem;
     margin-right: 1rem;
   }
-  
+
   .nav {
     overflow: hidden;
   }
-  
+
   .nav::after {
     content: "";
     position: absolute;
@@ -162,9 +340,9 @@ html {
     background-color: var(--clr-bg-dark);
     opacity: 0;
     transform: translate3d(-100%, 0, 0);
-    transition: opacity .25s, transform .25s ease-in-out;
+    transition: opacity 0.25s, transform 0.25s ease-in-out;
   }
-  
+
   .nav:hover::after,
   .nav:focus::after {
     opacity: 1;
@@ -172,48 +350,49 @@ html {
   }
 }
 
-@media  screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .shape-1 {
     position: absolute;
     left: 0%;
     bottom: 0%;
     width: 20vw;
   }
-  
+
   .shape-2 {
     position: absolute;
     left: 39%;
     bottom: 30%;
     width: 10vw;
   }
-  
+
   .shape-3 {
     position: absolute;
     right: 0%;
     top: 0%;
     width: 15vw;
   }
-  
+
   .landing-text {
+    margin-top: 4rem;
     padding-left: 12vw;
     padding-top: 18vh;
   }
-  
+
   .title {
     font-size: 2rem;
     font-weight: bold;
   }
-  
+
   .description {
     font-size: 1.5rem;
   }
-  
+
   .button {
     margin-left: 12vw;
     margin-top: 5rem;
     position: relative;
   }
-  
+
   .button-text {
     text-decoration: none;
     color: #fff;
@@ -221,37 +400,39 @@ html {
     background-color: var(--clr-bg-dark);
     border: 2px solid var(--clr-bg-dark);
   }
-  
+
   .button-text:hover {
     color: var(--clr-bg-dark);
     background-color: var(--clr-bg-light);
     border: 2px solid var(--clr-bg-dark);
   }
-  
+
   .navbar {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 76%;
     position: absolute;
-    right: 12vw;
-    top: 6vh;
     z-index: 15;
     text-transform: uppercase;
     font-size: 1.125rem;
   }
-  
+
   .navbar a {
     text-decoration: none;
     color: var(--clr-bg-dark);
     position: relative;
   }
-  
+
   .navbar a:nth-child(2) {
     margin-left: 1rem;
     margin-right: 1rem;
   }
-  
+
   .nav {
     overflow: hidden;
   }
-  
+
   .nav::after {
     content: "";
     position: absolute;
@@ -262,13 +443,12 @@ html {
     background-color: var(--clr-bg-dark);
     opacity: 0;
     transform: translate3d(-100%, 0, 0);
-    transition: opacity .25s, transform .25s ease-in-out;
+    transition: opacity 0.25s, transform 0.25s ease-in-out;
   }
-  
+
   .nav:hover::after,
   .nav:focus::after {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
-  
 }
