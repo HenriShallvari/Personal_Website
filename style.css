@@ -69,23 +69,38 @@ html {
     background-color: var(--clr-bg-dark);
   }
 
+  .mobile-logo {
+    position: relative;
+    color: var(--clr-bg-light);
+    text-decoration: none;
+  }
+
+  .mobile-logo::after {
+    content: "";
+    position: absolute;
+    width: 55%;
+    display: block;
+    height: 2px;
+    background-color: var(--clr-bg-light);
+    bottom: -2px;
+  }
+
   .hamburger-menu {
     cursor: pointer;
   }
 
   .bar {
     display: block;
-    width: 1.5rem;
+    width: 25px;
     height: 2px;
-    margin: 0.3rem 0.3rem;
-    border-radius: 4px;
+    margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: var(--clr-bg-light);
   }
 
   .hamburger-menu.active .bar:nth-child(1) {
-    transform: translateY(4px) rotate(45deg);
+    transform: translateY(7px) rotate(45deg);
   }
 
   .hamburger-menu.active .bar:nth-child(2) {
@@ -93,7 +108,7 @@ html {
   }
 
   .hamburger-menu.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .navbar {
@@ -102,10 +117,12 @@ html {
     background-color: var(--clr-bg-dark);
     opacity: 0;
     transition: all 0.3s ease-in-out;
+    visibility: hidden;
   }
 
   .navbar.active {
     opacity: 1;
+    visibility: visible;
   }
 
   .nav {
@@ -188,14 +205,14 @@ html {
     z-index: 15;
   }
 
-  .mobile-logo{
+  .mobile-logo {
     position: relative;
     color: var(--clr-bg-light);
     text-decoration: none;
   }
 
-  .mobile-logo::after{
-    content: '';
+  .mobile-logo::after {
+    content: "";
     position: absolute;
     width: 55%;
     display: block;
@@ -210,17 +227,16 @@ html {
 
   .bar {
     display: block;
-    width: 1.5rem;
+    width: 25px;
     height: 2px;
-    margin: 0.3rem 2rem;
-    border-radius: 4px;
+    margin: .3rem 2rem;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: var(--clr-bg-light);
   }
 
   .hamburger-menu.active .bar:nth-child(1) {
-    transform: translateY(4px) rotate(45deg);
+    transform: translateY(7px) rotate(45deg);
   }
 
   .hamburger-menu.active .bar:nth-child(2) {
@@ -228,8 +244,9 @@ html {
   }
 
   .hamburger-menu.active .bar:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-6px) rotate(-45deg);
   }
+
 
   .navbar {
     overflow: hidden;
@@ -238,10 +255,12 @@ html {
     width: 100%;
     background-color: var(--clr-bg-dark);
     opacity: 0;
+    visibility: hidden;
     transition: all 0.3s ease-in-out;
   }
 
   .navbar.active {
+    visibility: visible;
     opacity: 1;
   }
 
@@ -358,7 +377,7 @@ html {
     background-color: var(--clr-bg-dark);
     opacity: 0;
     transform: translate3d(-100%, 0, 0);
-    transition: opacity 0.25s, transform 0.25s ease-in-out;
+    transition: opacity 0.15s, transform 0.15s ease-in-out;
   }
 
   .nav:hover::after,
@@ -433,7 +452,6 @@ html {
     z-index: 15;
     text-transform: uppercase;
     font-size: 1.125rem;
-
   }
 
   .navbar a {
@@ -469,13 +487,13 @@ html {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
-  
-  .desktop-logo{
+
+  .desktop-logo {
     position: relative;
   }
 
-  .desktop-logo::after{
-    content: '';
+  .desktop-logo::after {
+    content: "";
     position: absolute;
     width: 75%;
     display: block;
